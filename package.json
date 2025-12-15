@@ -16,8 +16,14 @@
 	"license": "ISC",
 	"author": "Ganesh Adsul",
 	"type": "module",
-	"main": "App.js",
 	"scripts": {
 		"test": "jest"
+	},
+	"devDependencies": {
+		"parcel": "^2.16.3"
+	},
+	"dependencies": {
+		"react": "^19.2.3",
+		"react-dom": "^19.2.3"
 	}
 }
