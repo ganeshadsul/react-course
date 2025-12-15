@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 // creating root node for react to inject
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -20,6 +22,7 @@ const parent = React.createElement(
 			justifyContent: 'space-between',
 			alignItems: 'center',
 		},
+		key: 'p1',
 	},
 	[
 		React.createElement(
@@ -32,8 +35,9 @@ const parent = React.createElement(
 					justifyContent: 'space-between',
 					alignItems: 'end',
 				},
+				key: 'c1',
 			},
-			React.createElement('h1', {}, 'This is Child 1 H1 Tag')
+			React.createElement('h1', { key: 'c1h1' }, 'This is Child 1 H1 Tag')
 		),
 		React.createElement(
 			'div',
@@ -45,10 +49,19 @@ const parent = React.createElement(
 					justifyContent: 'space-between',
 					alignItems: 'start',
 				},
+				key: 'c2',
 			},
 			[
-				React.createElement('h1', {}, 'This is Child 2 H1 Tag'),
-				React.createElement('h2', {}, 'This is Child 2 H2 Tag'),
+				React.createElement(
+					'h1',
+					{ key: 'c2h1' },
+					'This is Child 2 H1 Tag'
+				),
+				React.createElement(
+					'h2',
+					{ key: 'c2h2' },
+					'This is Child 2 H2 Tag'
+				),
 			]
 		),
 		React.createElement(
@@ -62,6 +75,7 @@ const parent = React.createElement(
 				style: {
 					margin: '10px 25px',
 				},
+				key: 'c3',
 			},
 			null
 		),
