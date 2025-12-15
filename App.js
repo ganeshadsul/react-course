@@ -1,10 +1,16 @@
+// creating root node for react to inject
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// creating heading tag to show
 const heading = React.createElement(
 	'h1',
 	{ id: 'heading', className: 'h1-tag' },
 	'Hello World from React!'
 );
+// Rendering (showing) heading inside the root
+// root.render(heading);
 
+// creating nested tags inside one parent div
 const parent = React.createElement(
 	'div',
 	{
@@ -27,10 +33,7 @@ const parent = React.createElement(
 					alignItems: 'end',
 				},
 			},
-			[
-				React.createElement('h1', {}, 'This is Child 1 H1 Tag'),
-				React.createElement('h2', {}, 'This is Child 1 H2 Tag'),
-			]
+			React.createElement('h1', {}, 'This is Child 1 H1 Tag')
 		),
 		React.createElement(
 			'div',
@@ -64,6 +67,6 @@ const parent = React.createElement(
 		),
 	]
 );
-console.table(parent);
-// root.render(heading);
+console.log(parent);
+//consoling a parent element show us that it is not a html code, but a react element which is in the form of object
 root.render(parent);
