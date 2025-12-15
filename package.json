@@ -1,0 +1,23 @@
+{
+	"name": "react-course",
+	"version": "1.0.0",
+	"description": "This is a react course",
+	"keywords": [
+		"react"
+	],
+	"homepage": "https://github.com/ganeshadsul/react-course#readme",
+	"bugs": {
+		"url": "https://github.com/ganeshadsul/react-course/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ganeshadsul/react-course.git"
+	},
+	"license": "ISC",
+	"author": "Ganesh Adsul",
+	"type": "module",
+	"main": "App.js",
+	"scripts": {
+		"test": "jest"
+	}
+}
