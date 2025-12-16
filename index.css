@@ -1,3 +1,98 @@
-#heading {
-	color: red;
+body {
+	font-family: 'Fredoka', sans-serif;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+}
+
+.logo {
+	height: 100px;
+	width: 100px;
+}
+
+.nav-items ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0px 20px;
+	font-size: 24px;
+}
+.nav-items ul li {
+	padding: 10px;
+	margin: 10px;
+}
+.restuarant-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	column-gap: 20px;
+	row-gap: 20px;
+}
+.restaurant-card {
+	width: 90%;
+	height: 300px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	transition: box-shadow 0.15s ease-in;
+}
+.restaurant-card:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+	cursor: pointer;
+}
+
+.restaurant-logo-container {
+	height: 80%;
+	position: relative;
+}
+.restaurant-discount-info {
+	position: absolute;
+	position: absolute;
+	left: 0;
+	bottom: 15px;
+	padding-left: 5px;
+	color: white;
+	background: green;
+	padding-right: 5px;
+	font-size: 0.9rem;
+}
+.restaurant-image {
+	object-fit: cover;
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+}
+.restaurant-info-container {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 5px;
+}
+.restaurant-info,
+.restaurant-meta {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 3px;
+}
+.restaurant-name {
+	font-weight: 500;
+}
+.restaurant-rating-container {
+	color: white;
+	background-color: rgb(58, 183, 57);
+	display: flex;
+	align-items: center;
+	padding: 2px 5px;
+}
+.restuarant-rating {
+	margin-right: 2px;
+}
+.restaurant-meta {
+	color: grey;
+	font-size: 0.9rem;
+}
+
+.search {
+	padding: 10px;
 }
