@@ -100,3 +100,9 @@ body {
 .search {
 	padding: 10px;
 }
+
+.top-rated-res-btn {
+	margin: 15px;
+	padding: 10px;
+	cursor: pointer;
+}
