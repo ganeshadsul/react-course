@@ -8,7 +8,7 @@ const RestuarantCardComponent = ({
 	restuarantCuisine = ['tasty'],
 	restuarantAverageCost = '',
 	restuarantDiscount = '',
-	restuarantImageLink = null,
+	restuarantImageLink = 'https://picsum.photos/200/300',
 }) => {
 	return (
 		<div className="restaurant-card">
