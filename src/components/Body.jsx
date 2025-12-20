@@ -7,10 +7,11 @@ const Body = () => {
 	const [restaurants, setRestaurants] = useState([]);
 	const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 	const [isTop5RestaurantFilterActve, setIsTop5RestaurantFilterActve] =
-		useState(false);
+		useState(true);
 
 	useEffect(() => {
 		fetchData();
+		setIntialLoading(false);
 	}, []);
 
 	const fetchData = async () => {
@@ -40,7 +41,6 @@ const Body = () => {
 	};
 
 	if (intialLoading) {
-		setIntialLoading(false);
 		return (
 			<>
 				<Shimmer />
