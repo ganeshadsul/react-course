@@ -4,40 +4,42 @@ import Shimmer from './Shimmer';
 
 const Body = () => {
 	const [intialLoading, setIntialLoading] = useState(true);
-	const resRef = useRef();
 	const [restaurants, setRestaurants] = useState([]);
+	const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+	const [isTop5RestaurantFilterActve, setIsTop5RestaurantFilterActve] =
+		useState(false);
 
 	useEffect(() => {
 		fetchData();
-		console.log('useEffect called');
 	}, []);
 
 	const fetchData = async () => {
 		try {
 			const response = await fetch('/api/restaurants');
 			const data = await response.json();
-			resRef.restaurantsList = data;
 			setRestaurants(data);
+			setFilteredRestaurants(data);
 		} catch (error) {
 			console.log('Error: ' + error.message);
 			setRestaurants([]);
+			setFilteredRestaurants([]);
 		}
 	};
 
 	const handleSearchInput = (e) => {
 		if (e.target.value === '') {
-			return setRestaurants(resRef.restaurantsList);
+			return setFilteredRestaurants([...restaurants]);
 		}
-		const filteredRestaurants = resRef.restaurantsList.filter(
+		const filteredRestaurantsList = filteredRestaurants.filter(
 			(restaurant) =>
 				restaurant.name
 					.toLowerCase()
 					.includes(e.target.value.toLowerCase())
 		);
-		setRestaurants(filteredRestaurants);
+		setFilteredRestaurants(filteredRestaurantsList);
 	};
 
-	if (restaurants.length === 0 && intialLoading) {
+	if (intialLoading) {
 		setIntialLoading(false);
 		return (
 			<>
@@ -57,21 +59,33 @@ const Body = () => {
 			</div>
 			<div className="filters">
 				<button
-					className="top-rated-res-btn"
+					className={`top-rated-res-btn ${
+						isTop5RestaurantFilterActve
+							? 'top-rated-res-btn-active'
+							: ''
+					}`}
 					onClick={() => {
-						const filteredRestaurants = restaurants.filter(
-							(restuarant) => restuarant.ratings >= 4.5
+						if (!isTop5RestaurantFilterActve) {
+							setFilteredRestaurants(
+								filteredRestaurants.filter(
+									(restuarant) => restuarant.ratings >= 4.5
+								)
+							);
+						} else {
+							setFilteredRestaurants(restaurants);
+						}
+						setIsTop5RestaurantFilterActve(
+							!isTop5RestaurantFilterActve
 						);
-						setRestaurants(filteredRestaurants);
 					}}
 				>
 					Above 4.5
 				</button>
-				<span>{restaurants.length} restaurants found.</span>
+				<span>{filteredRestaurants.length} restaurants found.</span>
 			</div>
 
 			<div className="restuarant-container">
-				{restaurants.map((restaurant, index) => (
+				{filteredRestaurants.map((restaurant, index) => (
 					<RestaurantCard
 						key={index}
 						name={restaurant.name}

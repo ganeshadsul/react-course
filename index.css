@@ -17,3 +17,7 @@ body {
 	padding: 10px;
 	cursor: pointer;
 }
+.top-rated-res-btn-active {
+	color: white;
+	background-color: black;
+}
