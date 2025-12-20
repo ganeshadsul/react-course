@@ -1,4 +1,5 @@
 import { LOGO_URL } from '../utils/constants';
+import '../styles/header.css';
 
 const Header = () => {
 	return (

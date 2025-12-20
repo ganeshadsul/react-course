@@ -1,0 +1,25 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid black;
+}
+.logo-continer {
+	display: flex;
+	align-items: center;
+	padding: 5px;
+}
+.logo {
+	height: 100px;
+	width: 100px;
+}
+
+.nav-items ul {
+	display: flex;
+	list-style-type: none;
+	padding: 0px 20px;
+	font-size: 24px;
+}
+.nav-items ul li {
+	padding: 10px;
+	margin: 10px;
+}

@@ -1,4 +1,5 @@
 import { FaStar } from 'react-icons/fa';
+import '../styles/restaurant-card.css';
 
 const RestuarantCard = ({
 	name = 'Lorem, ipsum.',
