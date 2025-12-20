@@ -1,9 +1,48 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import RestaurantCard from './RestaurantCard';
-import mockRestaurants from '../utils/mockData';
+import Shimmer from './Shimmer';
 
 const Body = () => {
-	const [restaurants, setRestaurants] = useState(mockRestaurants);
+	const resRef = useRef();
+	const [restaurants, setRestaurants] = useState([]);
+
+	useEffect(() => {
+		fetchData();
+		console.log('useEffect called');
+	}, []);
+
+	const fetchData = async () => {
+		try {
+			const response = await fetch('/api/restaurants');
+			const data = await response.json();
+			resRef.restaurantsList = data;
+			setRestaurants(data);
+		} catch (error) {
+			console.log('Error: ' + error.message);
+			setRestaurants([]);
+		}
+	};
+
+	const handleSearchInput = (e) => {
+		if (e.target.value === '') {
+			return setRestaurants(resRef.restaurantsList);
+		}
+		const filteredRestaurants = resRef.restaurantsList.filter(
+			(restaurant) =>
+				restaurant.name
+					.toLowerCase()
+					.includes(e.target.value.toLowerCase())
+		);
+		setRestaurants(filteredRestaurants);
+	};
+
+	if (restaurants.length === 0) {
+		return (
+			<>
+				<Shimmer />
+			</>
+		);
+	}
 	return (
 		<>
 			<div className="search">
@@ -11,17 +50,7 @@ const Body = () => {
 					type="text"
 					className="search-restaurants"
 					placeholder="Search restuarants"
-					onChange={(e) => {
-						if (e.target.value === '')
-							return setRestaurants(mockRestaurants);
-						const filteredRestaurants = mockRestaurants.filter(
-							(restaurant) =>
-								restaurant.name
-									.toLowerCase()
-									.includes(e.target.value.toLowerCase())
-						);
-						setRestaurants(filteredRestaurants);
-					}}
+					onChange={(e) => handleSearchInput(e)}
 				/>
 			</div>
 			<div className="filters">
@@ -38,6 +67,7 @@ const Body = () => {
 				</button>
 				<span>{restaurants.length} restaurants found.</span>
 			</div>
+
 			<div className="restuarant-container">
 				{restaurants.map((restaurant, index) => (
 					<RestaurantCard

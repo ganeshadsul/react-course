@@ -1,0 +1,166 @@
+{
+	"restaurants": [
+		{
+			"id": "874203",
+			"name": "Spice Route",
+			"cuisines": ["Indian", "North Indian", "Biryani"],
+			"averageCost": "₹300 for one",
+			"discount": "20% OFF up to ₹100",
+			"imageSrc": "https://picsum.photos/300/200?random=1",
+			"ratings": 4.3
+		},
+		{
+			"id": "592817",
+			"name": "Pasta Palace",
+			"cuisines": ["Italian", "Pasta", "Continental"],
+			"averageCost": "₹450 for one",
+			"discount": "Flat ₹150 OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=2",
+			"ratings": 4.5
+		},
+		{
+			"id": "460982",
+			"name": "Burger Barn",
+			"cuisines": ["Burgers", "Fast Food", "American"],
+			"averageCost": "₹250 for one",
+			"discount": "Buy 1 Get 1 Free",
+			"imageSrc": "https://picsum.photos/300/200?random=3",
+			"ratings": 4.1
+		},
+		{
+			"id": "731654",
+			"name": "Sushi Zen",
+			"cuisines": ["Japanese", "Sushi", "Asian"],
+			"averageCost": "₹600 for one",
+			"discount": "15% OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=4",
+			"ratings": 4.6
+		},
+		{
+			"id": "905318",
+			"name": "Tandoori Tales",
+			"cuisines": ["North Indian", "Tandoor", "Punjabi"],
+			"averageCost": "₹350 for one",
+			"discount": "₹100 OFF above ₹499",
+			"imageSrc": "https://picsum.photos/300/200?random=5",
+			"ratings": 4.2
+		},
+		{
+			"id": "648290",
+			"name": "Green Bowl",
+			"cuisines": ["Healthy", "Salads", "Vegan"],
+			"averageCost": "₹280 for one",
+			"discount": "10% OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=6",
+			"ratings": 4.0
+		},
+		{
+			"id": "382471",
+			"name": "Dragon Wok",
+			"cuisines": ["Chinese", "Asian", "Noodles"],
+			"averageCost": "₹320 for one",
+			"discount": "Flat ₹75 OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=7",
+			"ratings": 4.1
+		},
+		{
+			"id": "716904",
+			"name": "Cafe Mocha",
+			"cuisines": ["Cafe", "Coffee", "Desserts"],
+			"averageCost": "₹200 for one",
+			"discount": "Free Dessert on ₹399",
+			"imageSrc": "https://picsum.photos/300/200?random=8",
+			"ratings": 4.4
+		},
+		{
+			"id": "259783",
+			"name": "Street Bites",
+			"cuisines": ["Street Food", "Chaat", "Snacks"],
+			"averageCost": "₹150 for one",
+			"discount": "20% OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=9",
+			"ratings": 3.9
+		},
+		{
+			"id": "984156",
+			"name": "BBQ Nation",
+			"cuisines": ["BBQ", "Grill", "Buffet"],
+			"averageCost": "₹700 for one",
+			"discount": "₹200 OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=10",
+			"ratings": 4.7
+		},
+		{
+			"id": "543862",
+			"name": "Pizza Hub",
+			"cuisines": ["Pizza", "Italian", "Fast Food"],
+			"averageCost": "₹400 for one",
+			"discount": "30% OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=11",
+			"ratings": 4.3
+		},
+		{
+			"id": "170495",
+			"name": "South Spice",
+			"cuisines": ["South Indian", "Dosa", "Idli"],
+			"averageCost": "₹220 for one",
+			"discount": "₹50 OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=12",
+			"ratings": 4.2
+		},
+		{
+			"id": "836214",
+			"name": "Kebab Corner",
+			"cuisines": ["Mughlai", "Kebabs", "Grill"],
+			"averageCost": "₹380 for one",
+			"discount": "15% OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=13",
+			"ratings": 4.1
+		},
+		{
+			"id": "692578",
+			"name": "Thai Treat",
+			"cuisines": ["Thai", "Asian", "Seafood"],
+			"averageCost": "₹550 for one",
+			"discount": "Flat ₹120 OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=14",
+			"ratings": 4.5
+		},
+		{
+			"id": "418905",
+			"name": "Dessert Den",
+			"cuisines": ["Desserts", "Bakery", "Ice Cream"],
+			"averageCost": "₹180 for one",
+			"discount": "Buy 2 Get 1",
+			"imageSrc": "https://picsum.photos/300/200?random=15",
+			"ratings": 4.0
+		},
+		{
+			"id": "775340",
+			"name": "Mexican Fiesta",
+			"cuisines": ["Mexican", "Tacos", "Wraps"],
+			"averageCost": "₹420 for one",
+			"discount": "25% OFF",
+			"imageSrc": "https://picsum.photos/300/200?random=16",
+			"ratings": 4.3
+		},
+		{
+			"id": "309864",
+			"name": "The Breakfast Club",
+			"cuisines": ["Breakfast", "Cafe", "Continental"],
+			"averageCost": "₹260 for one",
+			"discount": "Free Coffee",
+			"imageSrc": "https://picsum.photos/300/200?random=17",
+			"ratings": 4.4
+		},
+		{
+			"id": "951726",
+			"name": "Royal Thali",
+			"cuisines": ["Rajasthani", "Gujarati", "Thali"],
+			"averageCost": "₹500 for one",
+			"discount": "₹100 OFF above ₹599",
+			"imageSrc": "https://picsum.photos/300/200?random=18",
+			"ratings": 4.6
+		}
+	]
+}

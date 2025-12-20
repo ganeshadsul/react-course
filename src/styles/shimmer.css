@@ -1,0 +1,17 @@
+.shimmer-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	column-gap: 20px;
+	row-gap: 20px;
+	background-color: grey;
+	padding: 20px;
+}
+.shimmer-card {
+	width: 90%;
+	height: 300px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	background-color: lightgrey;
+}
