@@ -3,6 +3,7 @@ import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
 
 const Body = () => {
+	const [intialLoading, setIntialLoading] = useState(true);
 	const resRef = useRef();
 	const [restaurants, setRestaurants] = useState([]);
 
@@ -36,7 +37,8 @@ const Body = () => {
 		setRestaurants(filteredRestaurants);
 	};
 
-	if (restaurants.length === 0) {
+	if (restaurants.length === 0 && intialLoading) {
+		setIntialLoading(false);
 		return (
 			<>
 				<Shimmer />
