@@ -8,7 +8,7 @@ const Body = () => {
 	const [restaurants, setRestaurants] = useState([]);
 	const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 	const [isTop5RestaurantFilterActve, setIsTop5RestaurantFilterActve] =
-		useState(true);
+		useState(false);
 
 	useEffect(() => {
 		fetchData();
