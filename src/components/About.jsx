@@ -38,6 +38,9 @@ class About extends React.Component {
 	componentDidMount() {
 		console.log('Parent Component didMount');
 	}
+	componentDidUpdate() {
+		console.log(`Parent Component didUpdate`);
+	}
 	render() {
 		console.log('Parent Render');
 
@@ -47,24 +50,29 @@ class About extends React.Component {
 				<hr className="title-separator" />
 				<div className="users-container">
 					<Userf
+						githubUserName={`ganeshadsul`}
 						componentSource="Function"
 						name="Ganesh adsul"
 						location="Mumbai"
 						contactInfo="https://www.linkedin.com/in/ganeshadsul/"
 					/>
 					<hr className="user-separator" />
+					<User githubUserName={`ganeshadsul`} />
+					<hr className="user-separator" />
 					<User
-						componentSource="Class"
-						name="Rahul Adsul"
-						location="Pune"
-						contactInfo="https://www.linkedin.com/in/rahuladsul/"
+						githubUserName={`AshishMore97`}
+						// componentSource="Class"
+						// name="Rahul Adsul"
+						// location="Pune"
+						// contactInfo="https://www.linkedin.com/in/rahuladsul/"
 					/>
 					<hr className="user-separator" />
 					<User
-						componentSource="Class"
-						name="Anjali Adsul"
-						location="Rise"
-						contactInfo="https://www.linkedin.com/in/anjaliadsul/"
+						githubUserName={`AbhiPakhare`}
+						// componentSource="Class"
+						// name="Anjali Adsul"
+						// location="Rise"
+						// contactInfo="https://www.linkedin.com/in/anjaliadsul/"
 					/>
 				</div>
 			</div>

@@ -6,20 +6,36 @@ class User extends React.Component {
 		super(props);
 		this.state = {
 			count: 0,
+			userInfo: {
+				name: 'default name',
+				location: 'default location',
+				login: '@xyz',
+			},
 		};
-		console.log(`${this.props.name} Child Constructor`);
+		console.log(`${this.state.userInfo.name} Child Constructor`);
 	}
-	componentDidMount() {
-		console.log(`${this.props.name} Child Component didMount`);
+	async componentDidMount() {
+		console.log(`${this.state.userInfo.name} Child Component didMount`);
+		const response = await fetch(
+			`https://api.github.com/users/${this.props.githubUserName}`
+		);
+		const userInfo = await response.json();
+		this.setState({
+			userInfo,
+		});
+	}
+	componentDidUpdate() {
+		console.log(`${this.state.userInfo.name} Child Component didUpdate`);
 	}
 	render() {
-		console.log(`${this.props.name} Child Render`);
-		const {
-			name = 'test name',
-			location = 'temp location',
-			contactInfo = 'abc.xyz',
-			componentSource,
-		} = this.props;
+		const { name, location, login } = this.state.userInfo;
+		console.log(`${this.state.userInfo.name} Child Render`);
+		// const {
+		// 	name = 'test name',
+		// 	location = 'temp location',
+		// 	contactInfo = 'abc.xyz',
+		// 	componentSource,
+		// } = this.props;
 		const incrementCount = () => {
 			this.setState({
 				count: this.state.count + 1,
@@ -28,10 +44,9 @@ class User extends React.Component {
 		return (
 			<>
 				<div className="user-card">
-					<div>Component Source: {componentSource}</div>
 					<div className="user-name">{name}</div>
 					<div className="user-location">{location}</div>
-					<div className="user-contact-info">{contactInfo}</div>
+					<div className="user-contact-info">@{login}</div>
 					<div className="count-button">
 						Likes: {this.state.count}
 					</div>
