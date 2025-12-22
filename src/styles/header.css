@@ -23,3 +23,7 @@
 	padding: 10px;
 	margin: 10px;
 }
+.nav-items ul li a {
+	text-decoration: none;
+	color: black;
+}
