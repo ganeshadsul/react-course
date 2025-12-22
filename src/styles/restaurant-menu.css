@@ -1,0 +1,87 @@
+.restaurant-menu-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.menu-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+}
+.hr-header {
+	width: 50%;
+	flex: 1;
+}
+.res-name {
+	font-size: 3rem;
+}
+.menu-span {
+	padding: 15px;
+	width: auto;
+}
+.menu-category-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 800px;
+	margin-bottom: 25px;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.category {
+	margin: 15px;
+}
+.menu-items-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.menu-image-container {
+	padding: 10px;
+}
+.menu-image {
+	width: 100px;
+	height: 100px;
+	border-radius: 5px;
+}
+.menu-item {
+	display: flex;
+	justify-content: space-between;
+	border-radius: 5px;
+	transition: box-shadow 0.15s;
+	margin: 10px;
+	width: 100%;
+}
+.menu-item:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.menu-meta {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 1;
+	padding: 10px;
+}
+.menu-info,
+.food-type-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.dotted-line {
+	flex: 1;
+	border: 2px dotted black;
+	height: 0;
+	margin: auto 10px;
+}
+.menu-name {
+	width: auto;
+}
+.category-separator {
+	width: 100%;
+}

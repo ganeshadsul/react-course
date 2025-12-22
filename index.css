@@ -21,3 +21,7 @@ body {
 	color: white;
 	background-color: black;
 }
+
+.restaurant-link {
+	text-decoration: none;
+}
