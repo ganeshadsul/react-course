@@ -1,0 +1,28 @@
+.about-us-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.title-separator {
+	width: 80%;
+}
+
+.about-us-page-title {
+	font-weight: 500;
+	font-size: 3rem;
+}
+
+.users-container {
+	margin: 15px;
+	display: flex;
+	flex-direction: column;
+	width: 800px;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+	padding: 10px 15px;
+	border-radius: 5px;
+}
+
+.user-separator {
+	width: 60%;
+}
