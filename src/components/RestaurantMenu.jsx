@@ -1,39 +1,20 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import '../styles/restaurant-menu.css';
 import MenuCategory from './MenuCategory';
+import useRestaurantMenu, {
+	groupMenuItems,
+} from '../utils/hooks/useRestaurantMenu';
+import useRestaurantDetails from '../utils/hooks/useRestaurantDetails';
+import '../styles/restaurant-menu.css';
 
 const RestaurantMenu = () => {
 	const { id } = useParams();
-	const [restaurantDetails, setRestaurantDetails] = useState({});
-	const [groupedMenuDetails, setGroupedMenuDetails] = useState([]);
 
-	const fetchRestaurantDetails = async (id) => {
-		const response = await fetch(`/api/restaurants/${id}`);
-		const data = await response.json();
-		setRestaurantDetails(data);
-	};
-
-	const fetchMenuDetails = async (id) => {
-		const response = await fetch(`/api/menu?restaurantId=${id}`);
-		const data = await response.json();
-		const grouped = data.reduce((acc, item) => {
-			acc[item.category] = acc[item.category] || [];
-			acc[item.category].push(item);
-			return acc;
-		}, {});
-		const groupedMenuList = Object.entries(grouped).map(
-			([category, items]) => ({
-				category,
-				items,
-			})
-		);
-		setGroupedMenuDetails(groupedMenuList);
-	};
-	useEffect(() => {
-		fetchRestaurantDetails(id);
-		fetchMenuDetails(id);
-	}, []);
+	const restaurantDetails = useRestaurantDetails(id);
+	const menuDetails = useRestaurantMenu(id);
+	let groupedMenuDetails = [];
+	if (menuDetails) {
+		groupedMenuDetails = groupMenuItems(menuDetails, 'category');
+	}
 
 	return (
 		<>

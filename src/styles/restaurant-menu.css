@@ -85,3 +85,8 @@
 .category-separator {
 	width: 100%;
 }
+
+.menu-desc {
+	color: rgb(96, 96, 96);
+	font-size: 0.8rem;
+}
