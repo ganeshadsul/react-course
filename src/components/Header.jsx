@@ -23,6 +23,9 @@ const Header = () => {
 							<Link to="/contact-us">Contact us</Link>
 						</li>
 						<li>Cart</li>
+						<li>
+							<Link to="/grocery">Grocery</Link>
+						</li>
 						<li>{onlineStatus ? '🟢' : '🔴'}</li>
 					</ul>
 				</div>
