@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import { LOGO_URL } from '../utils/constants';
 import '../styles/header.css';
+import useOnlineStatus from '../utils/hooks/useOnlineStatus';
 
 const Header = () => {
+	const onlineStatus = useOnlineStatus();
 	return (
 		<>
 			<nav className="header">
@@ -21,6 +23,7 @@ const Header = () => {
 							<Link to="/contact-us">Contact us</Link>
 						</li>
 						<li>Cart</li>
+						<li>{onlineStatus ? '🟢' : '🔴'}</li>
 					</ul>
 				</div>
 			</nav>
