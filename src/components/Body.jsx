@@ -56,42 +56,45 @@ const Body = () => {
 	}
 	return (
 		<>
-			<div className="search">
-				<input
-					type="text"
-					className="search-restaurants"
-					placeholder="Search restuarants"
-					onChange={(e) => handleSearchInput(e)}
-				/>
-			</div>
-			<div className="filters">
-				<button
-					className={`top-rated-res-btn ${
-						isTop5RestaurantFilterActve
-							? 'top-rated-res-btn-active'
-							: ''
-					}`}
-					onClick={() => {
-						if (!isTop5RestaurantFilterActve) {
-							setFilteredRestaurants(
-								filteredRestaurants.filter(
-									(restuarant) => restuarant.ratings >= 4.5
-								)
+			<section className="flex justify-between items-center p-3">
+				<div className="search">
+					<input
+						type="text"
+						className="search-restaurants focus:outline-0 p-1 border rounded border-gray-700"
+						placeholder="Search restuarants"
+						onChange={(e) => handleSearchInput(e)}
+					/>
+				</div>
+				<div>{filteredRestaurants.length} restaurants found.</div>
+				<div className="filters">
+					<button
+						className={`top-rated-res-btn  ${
+							isTop5RestaurantFilterActve
+								? 'top-rated-res-btn-active bg-[#b73e4c] text-white py-2 px-3 rounded hover:opacity-89 transition-opacity duration-150 border border-black'
+								: 'bg-[#EF4F61] text-white py-2 px-3 rounded hover:opacity-89 transition-opacity duration-150  border border-transparent'
+						}`}
+						onClick={() => {
+							if (!isTop5RestaurantFilterActve) {
+								setFilteredRestaurants(
+									filteredRestaurants.filter(
+										(restuarant) =>
+											restuarant.ratings >= 4.5
+									)
+								);
+							} else {
+								setFilteredRestaurants(restaurants);
+							}
+							setIsTop5RestaurantFilterActve(
+								!isTop5RestaurantFilterActve
 							);
-						} else {
-							setFilteredRestaurants(restaurants);
-						}
-						setIsTop5RestaurantFilterActve(
-							!isTop5RestaurantFilterActve
-						);
-					}}
-				>
-					Above 4.5
-				</button>
-				<span>{filteredRestaurants.length} restaurants found.</span>
-			</div>
+						}}
+					>
+						Above 4.5
+					</button>
+				</div>
+			</section>
 
-			<div className="restuarant-container">
+			<div className="restuarant-container p-3 grid grid-cols-4 gap-5">
 				{filteredRestaurants.map((restaurant, index) => (
 					<Link
 						className="restaurant-link"

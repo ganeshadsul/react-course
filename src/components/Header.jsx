@@ -7,12 +7,12 @@ const Header = () => {
 	const onlineStatus = useOnlineStatus();
 	return (
 		<>
-			<nav className="header">
+			<nav className="header flex justify-between items-center p-2 shadow-sm">
 				<div className="logo-continer">
-					<img className="logo" src={LOGO_URL} alt="logo" />
+					<img className="logo w-20" src={LOGO_URL} alt="logo" />
 				</div>
 				<div className="nav-items">
-					<ul>
+					<ul className="flex *:px-5">
 						<li>
 							<Link to="/">Home</Link>
 						</li>
