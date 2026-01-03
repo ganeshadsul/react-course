@@ -9,7 +9,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=1",
 			"ratings": 4.3,
 			"contactNumber": "+91 98210 12345",
-			"address": "Shop 12, Linking Road, Bandra West, Mumbai, Maharashtra 400050"
+			"address": "Shop 12, Linking Road, Bandra West, Mumbai, Maharashtra 400050",
+			"isPromoted": true
 		},
 		{
 			"id": "592817",
@@ -20,7 +21,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=2",
 			"ratings": 4.5,
 			"contactNumber": "+91 98190 23456",
-			"address": "Ground Floor, Hill Road, Bandra West, Mumbai, Maharashtra 400050"
+			"address": "Ground Floor, Hill Road, Bandra West, Mumbai, Maharashtra 400050",
+			"isPromoted": false
 		},
 		{
 			"id": "460982",
@@ -31,7 +33,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=3",
 			"ratings": 4.1,
 			"contactNumber": "+91 99012 34567",
-			"address": "Unit 3B, Hill Road, Bandra West, Mumbai, Maharashtra 400050"
+			"address": "Unit 3B, Hill Road, Bandra West, Mumbai, Maharashtra 400050",
+			"isPromoted": false
 		},
 		{
 			"id": "731654",
@@ -42,7 +45,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=4",
 			"ratings": 4.6,
 			"contactNumber": "+91 99308 45678",
-			"address": "Shop 21, Linking Road, Bandra West, Mumbai, Maharashtra 400050"
+			"address": "Shop 21, Linking Road, Bandra West, Mumbai, Maharashtra 400050",
+			"isPromoted": true
 		},
 		{
 			"id": "905318",
@@ -53,7 +57,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=5",
 			"ratings": 4.2,
 			"contactNumber": "+91 98675 56789",
-			"address": "A/2, Famous Studio Lane, Juhu, Mumbai, Maharashtra 400049"
+			"address": "A/2, Famous Studio Lane, Juhu, Mumbai, Maharashtra 400049",
+			"isPromoted": false
 		},
 		{
 			"id": "648290",
@@ -64,7 +69,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=6",
 			"ratings": 4.0,
 			"contactNumber": "+91 97788 67890",
-			"address": "Shop 8, Linking Road, Santacruz West, Mumbai, Maharashtra 400054"
+			"address": "Shop 8, Linking Road, Santacruz West, Mumbai, Maharashtra 400054",
+			"isPromoted": false
 		},
 		{
 			"id": "382471",
@@ -75,7 +81,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=7",
 			"ratings": 4.1,
 			"contactNumber": "+91 98909 78901",
-			"address": "Shop 15, SV Road, Andheri West, Mumbai, Maharashtra 400058"
+			"address": "Shop 15, SV Road, Andheri West, Mumbai, Maharashtra 400058",
+			"isPromoted": false
 		},
 		{
 			"id": "716904",
@@ -86,7 +93,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=8",
 			"ratings": 4.4,
 			"contactNumber": "+91 98127 89012",
-			"address": "Ground Floor, Hill Road Cafe Lane, Bandra West, Mumbai, Maharashtra 400050"
+			"address": "Ground Floor, Hill Road Cafe Lane, Bandra West, Mumbai, Maharashtra 400050",
+			"isPromoted": true
 		},
 		{
 			"id": "259783",
@@ -97,7 +105,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=9",
 			"ratings": 3.9,
 			"contactNumber": "+91 97234 90123",
-			"address": "Street Food Zone, Crawford Market, Mumbai, Maharashtra 400001"
+			"address": "Street Food Zone, Crawford Market, Mumbai, Maharashtra 400001",
+			"isPromoted": false
 		},
 		{
 			"id": "984156",
@@ -108,7 +117,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=10",
 			"ratings": 4.7,
 			"contactNumber": "+91 99211 01234",
-			"address": "Shop 5, Phoenix Market City, Kurla West, Mumbai, Maharashtra 400070"
+			"address": "Shop 5, Phoenix Market City, Kurla West, Mumbai, Maharashtra 400070",
+			"isPromoted": true
 		},
 		{
 			"id": "543862",
@@ -119,7 +129,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=11",
 			"ratings": 4.3,
 			"contactNumber": "+91 97890 12345",
-			"address": "Shop 10, R City Mall, Ghatkopar West, Mumbai, Maharashtra 400086"
+			"address": "Shop 10, R City Mall, Ghatkopar West, Mumbai, Maharashtra 400086",
+			"isPromoted": false
 		},
 		{
 			"id": "170495",
@@ -130,7 +141,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=12",
 			"ratings": 4.2,
 			"contactNumber": "+91 97098 23456",
-			"address": "Shop 3, Dadar West, Mumbai, Maharashtra 400028"
+			"address": "Shop 3, Dadar West, Mumbai, Maharashtra 400028",
+			"isPromoted": false
 		},
 		{
 			"id": "836214",
@@ -141,7 +153,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=13",
 			"ratings": 4.1,
 			"contactNumber": "+91 98821 34567",
-			"address": "Kebab Street, Mohammed Ali Road, Mumbai, Maharashtra 400003"
+			"address": "Kebab Street, Mohammed Ali Road, Mumbai, Maharashtra 400003",
+			"isPromoted": false
 		},
 		{
 			"id": "692578",
@@ -152,7 +165,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=14",
 			"ratings": 4.5,
 			"contactNumber": "+91 99654 45678",
-			"address": "Shop 22, Carter Road, Bandra West, Mumbai, Maharashtra 400050"
+			"address": "Shop 22, Carter Road, Bandra West, Mumbai, Maharashtra 400050",
+			"isPromoted": false
 		},
 		{
 			"id": "418905",
@@ -163,7 +177,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=15",
 			"ratings": 4.0,
 			"contactNumber": "+91 97543 56789",
-			"address": "Bakery Lane, Lokhandwala Complex, Andheri West, Mumbai, Maharashtra 400053"
+			"address": "Bakery Lane, Lokhandwala Complex, Andheri West, Mumbai, Maharashtra 400053",
+			"isPromoted": false
 		},
 		{
 			"id": "775340",
@@ -174,7 +189,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=16",
 			"ratings": 4.3,
 			"contactNumber": "+91 98876 78901",
-			"address": "Shop 18, Infiniti Mall, Malad West, Mumbai, Maharashtra 400064"
+			"address": "Shop 18, Infiniti Mall, Malad West, Mumbai, Maharashtra 400064",
+			"isPromoted": false
 		},
 		{
 			"id": "309864",
@@ -185,7 +201,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=17",
 			"ratings": 4.4,
 			"contactNumber": "+91 98012 89023",
-			"address": "Cafe Street, Lower Parel, Mumbai, Maharashtra 400013"
+			"address": "Cafe Street, Lower Parel, Mumbai, Maharashtra 400013",
+			"isPromoted": true
 		},
 		{
 			"id": "951726",
@@ -196,7 +213,8 @@
 			"imageSrc": "https://picsum.photos/300/200?random=18",
 			"ratings": 4.6,
 			"contactNumber": "+91 99023 12345",
-			"address": "Thali House, Juhu Tara Road, Juhu, Mumbai, Maharashtra 400049"
+			"address": "Thali House, Juhu Tara Road, Juhu, Mumbai, Maharashtra 400049",
+			"isPromoted": false
 		}
 	],
 	"menu": [

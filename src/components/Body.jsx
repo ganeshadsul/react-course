@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import RestaurantCard from './RestaurantCard';
+import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/hooks/useOnlineStatus';
@@ -10,6 +10,7 @@ const Body = () => {
 	const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 	const [isTop5RestaurantFilterActve, setIsTop5RestaurantFilterActve] =
 		useState(false);
+	const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
 
 	useEffect(() => {
 		fetchData();
@@ -101,14 +102,25 @@ const Body = () => {
 						to={`/restaurants/${restaurant.id}`}
 						key={index}
 					>
-						<RestaurantCard
-							name={restaurant.name}
-							cuisines={restaurant.cuisines}
-							averageCost={restaurant.averageCost}
-							ratings={restaurant.ratings}
-							discount={restaurant.discount}
-							imageSrc={restaurant.imageSrc}
-						/>
+						{restaurant.isPromoted ? (
+							<RestaurantCardPromoted
+								name={restaurant.name}
+								cuisines={restaurant.cuisines}
+								averageCost={restaurant.averageCost}
+								ratings={restaurant.ratings}
+								discount={restaurant.discount}
+								imageSrc={restaurant.imageSrc}
+							/>
+						) : (
+							<RestaurantCard
+								name={restaurant.name}
+								cuisines={restaurant.cuisines}
+								averageCost={restaurant.averageCost}
+								ratings={restaurant.ratings}
+								discount={restaurant.discount}
+								imageSrc={restaurant.imageSrc}
+							/>
+						)}
 					</Link>
 				))}
 			</div>
