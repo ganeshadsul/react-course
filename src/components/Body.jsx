@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import RestaurantCard, { withPromotedLabel } from './RestaurantCard';
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/hooks/useOnlineStatus';
+import UserContext from '../utils/contexts/UserContext';
 
 const Body = () => {
 	const [intialLoading, setIntialLoading] = useState(true);
@@ -11,6 +12,7 @@ const Body = () => {
 	const [isTop5RestaurantFilterActve, setIsTop5RestaurantFilterActve] =
 		useState(false);
 	const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+	const { setUserInfo, loggedInUser } = useContext(UserContext);
 
 	useEffect(() => {
 		fetchData();
@@ -43,6 +45,9 @@ const Body = () => {
 		setFilteredRestaurants(filteredRestaurantsList);
 	};
 
+	const handleUserNameChange = (e) => {
+		setUserInfo({ ...loggedInUser, fName: e.target.value });
+	};
 	const onlineStatus = useOnlineStatus();
 	if (!onlineStatus) {
 		return <h1>Looks like you are offline!!!</h1>;
@@ -65,14 +70,21 @@ const Body = () => {
 						placeholder="Search restuarants"
 						onChange={(e) => handleSearchInput(e)}
 					/>
+					<input
+						type="text"
+						className="focus:outline-0 ml-2.5 p-1 border rounded border-gray-700"
+						placeholder="Enter User Name"
+						onChange={(e) => handleUserNameChange(e)}
+						value={loggedInUser.fName}
+					/>
 				</div>
 				<div>{filteredRestaurants.length} restaurants found.</div>
 				<div className="filters">
 					<button
 						className={`top-rated-res-btn  ${
 							isTop5RestaurantFilterActve
-								? 'top-rated-res-btn-active bg-[#b73e4c] text-white py-2 px-3 rounded hover:opacity-89 transition-opacity duration-150 border border-black'
-								: 'bg-[#EF4F61] text-white py-2 px-3 rounded hover:opacity-89 transition-opacity duration-150  border border-transparent'
+								? 'top-rated-res-btn-active bg-[#b73e4c] cursor-pointer text-white py-2 px-3 rounded hover:opacity-89 transition-opacity duration-150 border border-black'
+								: 'bg-[#EF4F61] text-white cursor-pointer py-2 px-3 rounded hover:opacity-89 transition-opacity duration-150  border border-transparent'
 						}`}
 						onClick={() => {
 							if (!isTop5RestaurantFilterActve) {

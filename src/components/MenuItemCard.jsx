@@ -30,7 +30,7 @@ const MenuItemCard = (props) => {
 						<div className="menu-desc">{menu.description}</div>
 					</div>
 				</div>
-				<div className="menu-image-container p-2.5 w-50 relative">
+				<div className="menu-image-container p-2.5 w-1/5 relative">
 					<img
 						className="menu-image size-full object-cover"
 						src={menu.imageSrc}
