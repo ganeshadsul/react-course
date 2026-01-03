@@ -9,7 +9,7 @@ const MenuCategory = (props) => {
 	return (
 		<>
 			<div
-				className="menu-category-container w-1/2 m-3 p-2.5 shadow-xl bg-gray-50 rounded flex flex-col"
+				className="menu-category-container w-1/2 mx-3 mt-3 p-2.5 shadow-xl bg-gray-50 rounded flex flex-col"
 				onClick={handleClick}
 			>
 				<div
@@ -23,18 +23,17 @@ const MenuCategory = (props) => {
 
 					{showMenuItems ? <FaChevronUp /> : <FaChevronDown />}
 				</div>
-
-				<div
-					className={`menu-category-body transition-opacity duration-150 ease-in ${
-						showMenuItems ? 'opacity-100' : 'opacity-0'
-					}`}
-				>
-					{showMenuItems
-						? menuItems.items.map((menu) => (
-								<MenuItemCard key={menu.id} menu={menu} />
-						  ))
-						: ''}
-				</div>
+			</div>
+			<div
+				className={`w-1/2 shadow-xl bg-gray-50 rounded flex flex-col menu-category-body transition-opacity duration-150 ease-in ${
+					showMenuItems ? 'opacity-100' : 'opacity-0'
+				}`}
+			>
+				{showMenuItems
+					? menuItems.items.map((menu) => (
+							<MenuItemCard key={menu.id} menu={menu} />
+					  ))
+					: ''}
 			</div>
 		</>
 	);
