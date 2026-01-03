@@ -25,7 +25,7 @@ const RestuarantCard = ({
 			<div className="restaurant-info-container flex flex-col flex-1 p-1">
 				<div className="restaurant-info flex justify-between mt-1">
 					<div className="restaurant-name">{name}</div>
-					<div className="restaurant-rating-container flex items-center py-0.5 px-1">
+					<div className="restaurant-rating-container flex items-center py-0.5 px-1.5 bg-green-600 text-white rounded">
 						<div className="restuarant-rating mr-1">{ratings}</div>
 						<FaStar />
 					</div>
