@@ -6,6 +6,7 @@ import useRestaurantMenu, {
 import useRestaurantDetails from '../utils/hooks/useRestaurantDetails';
 import '../styles/restaurant-menu.css';
 import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa';
+import { useState } from 'react';
 
 const RestaurantMenu = () => {
 	const { id } = useParams();
@@ -16,6 +17,14 @@ const RestaurantMenu = () => {
 	if (menuDetails) {
 		groupedMenuDetails = groupMenuItems(menuDetails, 'category');
 	}
+	const [expandedCategory, setExpandedCategory] = useState(0);
+	const toggleMenuCategoryAccordion = (catId) => {
+		if (catId == expandedCategory) {
+			setExpandedCategory(null);
+		} else {
+			setExpandedCategory(catId);
+		}
+	};
 
 	return (
 		<>
@@ -52,7 +61,14 @@ const RestaurantMenu = () => {
 					<hr className="hr-header flex-1" />
 				</div>
 				{groupedMenuDetails.map((menuItems, index) => (
-					<MenuCategory key={index} menuItems={menuItems} />
+					<MenuCategory
+						key={index}
+						menuItems={menuItems}
+						showMenuItems={expandedCategory === index ?? false}
+						toggleMenuCategoryAccordion={() =>
+							toggleMenuCategoryAccordion(index)
+						}
+					/>
 				))}
 			</div>
 		</>
