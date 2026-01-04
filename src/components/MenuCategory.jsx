@@ -1,7 +1,8 @@
-import MenuItemCard from './MenuItemCard';
+import MenuItemCard, { withCartActions } from './MenuItemCard';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const MenuCategory = (props) => {
+	const MenuItemCardWithCartActions = withCartActions(MenuItemCard);
 	const { menuItems, showMenuItems, toggleMenuCategoryAccordion } = props;
 	const handleClick = () => {
 		toggleMenuCategoryAccordion();
@@ -31,7 +32,10 @@ const MenuCategory = (props) => {
 			>
 				{showMenuItems
 					? menuItems.items.map((menu) => (
-							<MenuItemCard key={menu.id} menu={menu} />
+							<MenuItemCardWithCartActions
+								key={menu.id}
+								menu={menu}
+							/>
 					  ))
 					: ''}
 			</div>

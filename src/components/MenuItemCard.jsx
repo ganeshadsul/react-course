@@ -1,5 +1,8 @@
 import { FaLeaf } from 'react-icons/fa';
 import { TbMeat } from 'react-icons/tb';
+import { useDispatch, useSelector } from 'react-redux';
+import { addItem, removeItem } from '../store/slices/cartSlice';
+import { FaTrashAlt } from 'react-icons/fa';
 const MenuItemCard = (props) => {
 	const { menu } = props;
 	return (
@@ -21,7 +24,6 @@ const MenuItemCard = (props) => {
 								)}
 							</div>
 						</div>
-						{/* <div className="dotted-line mx-2.5 my-auto flex-1 border-2 border-dotted border-black"></div> */}
 						<div className="menu-price text-l">
 							&#8377; {menu.price}
 						</div>
@@ -36,12 +38,70 @@ const MenuItemCard = (props) => {
 						src={menu.imageSrc}
 						alt=""
 					/>
-					<button className="absolute bg-white cursor-pointer border-2 border-red-600 text-red-600 hover:bg-red-100 transition duration-150 rounded bottom-0.5 left-1/2 -translate-x-1/2 px-3 py-1">
-						Add+
-					</button>
 				</div>
 			</div>
 		</>
 	);
+};
+export const withCartActions = (MenuItemCard) => {
+	const cartItems = useSelector((store) => store.cart.items);
+	return (props) => {
+		const { menu } = props;
+		const dispatch = useDispatch();
+		const addToCart = (item) => {
+			dispatch(addItem(item));
+		};
+		const removeFromCart = (item) => {
+			dispatch(removeItem(item));
+		};
+		return (
+			<>
+				<div className="relative">
+					<MenuItemCard {...props} />
+					<div className="absolute bottom-2.5 right-16.5">
+						{cartItems.find((cart) => cart.id === menu.id) ? (
+							<button
+								className=" bg-white cursor-pointer border-2 border-red-600 text-red-600 hover:bg-red-100 transition duration-150 rounded px-3 py-1"
+								onClick={() => removeFromCart(menu)}
+							>
+								Remove
+							</button>
+						) : (
+							<button
+								className=" bg-white cursor-pointer border-2 border-red-600 text-red-600 hover:bg-red-100 transition duration-150 rounded px-3 py-1"
+								onClick={() => addToCart(menu)}
+							>
+								Add
+							</button>
+						)}
+					</div>
+				</div>
+			</>
+		);
+	};
+};
+
+export const withRemoveFromCartOption = (MenuItemCard) => {
+	return (props) => {
+		const { menu } = props;
+		const dispatch = useDispatch();
+
+		const removeFromCart = (item) => {
+			dispatch(removeItem(item));
+		};
+		return (
+			<>
+				<div className="relative">
+					<MenuItemCard {...props} />
+					<button
+						className="flex items-center absolute top-1 right-3.5 bg-red-600 hover:bg-red-700 active:bg-red-800 transition-colors duration-150 cursor-pointer text-white p-1.5 rounded-full"
+						onClick={() => removeFromCart(menu)}
+					>
+						<FaTrashAlt size={12} />
+					</button>
+				</div>
+			</>
+		);
+	};
 };
 export default MenuItemCard;
